@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sachin Tyagi — Backend Engineer · PHP · AI Developer</title>
+<title>Sachin Tyagi — Backend Engineer · AI Developer</title>
 <meta name="description" content="Sachin Tyagi — Senior Backend Engineer with 12+ years building REST APIs, mobile backends and web platforms with PHP, Laravel, Python and AI-assisted workflows.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -65,6 +65,9 @@
   .eyebrow { color: var(--accent-2); font-size: .9rem; margin-bottom: 14px; }
   .hero h1 { font-size: clamp(2.4rem, 6vw, 4.2rem); line-height: 1.08; font-weight: 800; letter-spacing: -0.03em; }
   .hero .role { font-size: clamp(1.1rem, 2.4vw, 1.5rem); color: var(--text); font-weight: 600; margin-top: 12px; }
+  .hero .role .sep { color: var(--accent); margin: 0 4px; }
+  .stack { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+  .stack li { font-size: .8rem; padding: 4px 12px; border-radius: 999px; color: var(--accent-2); background: rgba(34,211,238,.08); border: 1px solid rgba(34,211,238,.25); }
   .hero .tagline { color: var(--muted); font-size: 1.1rem; margin-top: 14px; max-width: 560px; }
   .cta { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 32px; }
   .btn {
@@ -208,7 +211,10 @@
     <div class="container hero-inner">
       <div>
         <h1><span class="grad-text">Sachin Tyagi</span></h1>
-        <p class="role">Backend Engineer · PHP · AI Developer</p>
+        <p class="role">Backend Engineer <span class="sep">·</span> AI Developer</p>
+        <ul class="stack mono" aria-label="Tech stack">
+          <li>PHP (Laravel)</li><li>Python</li><li>JavaScript</li><li>Node.js</li><li>React</li><li>AWS</li><li>Docker</li>
+        </ul>
         <p class="tagline">I build fast, clean web apps and the REST APIs that power them, backed by 12+ years of architecting production backends for mobile apps, news platforms and e-commerce.</p>
         <div class="cta">
           <a href="#projects" class="btn btn-primary">View Projects
