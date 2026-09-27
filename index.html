@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sachin Tyagi — Backend Engineer · AI Developer</title>
+<title>Sachin Tyagi — Team Lead · Backend Engineer · AI Developer</title>
 <meta name="description" content="Sachin Tyagi — Senior Backend Engineer with 12+ years building REST APIs, mobile backends and web platforms with PHP, Laravel, Python and AI-assisted workflows.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -52,6 +52,14 @@
   .nav-links a { color: var(--muted); font-size: .92rem; font-weight: 500; transition: color .2s; }
   .nav-links a:hover, .nav-links a.active { color: var(--text); }
   .menu-btn { display: none; background: none; border: 0; color: var(--text); cursor: pointer; padding: 6px; }
+  .nav-right { display: flex; align-items: center; gap: 24px; }
+  .resume-btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 7px 14px; border-radius: 8px; font-size: .88rem; font-weight: 600;
+    color: var(--accent-2); border: 1px solid rgba(34,211,238,.45);
+    transition: background .2s, transform .2s;
+  }
+  .resume-btn:hover { background: rgba(34,211,238,.1); transform: translateY(-1px); }
 
   /* Hero */
   .hero { min-height: 100vh; display: flex; align-items: center; position: relative; padding: 110px 0 70px; }
@@ -66,6 +74,7 @@
   .hero h1 { font-size: clamp(2.4rem, 6vw, 4.2rem); line-height: 1.08; font-weight: 800; letter-spacing: -0.03em; }
   .hero .role { font-size: clamp(1.1rem, 2.4vw, 1.5rem); color: var(--text); font-weight: 600; margin-top: 12px; }
   .hero .role .sep { color: var(--accent); margin: 0 4px; }
+  .hero .role .nw { white-space: nowrap; }
   .stack { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
   .stack li { font-size: .8rem; padding: 4px 12px; border-radius: 999px; color: var(--accent-2); background: rgba(34,211,238,.08); border: 1px solid rgba(34,211,238,.25); }
   .hero .tagline { color: var(--muted); font-size: 1.1rem; margin-top: 14px; max-width: 560px; }
@@ -170,6 +179,7 @@
   }
   @media (max-width: 720px) {
     .menu-btn { display: block; }
+    .nav-right { gap: 10px; }
     .nav-links {
       position: absolute; top: 64px; left: 0; right: 0; flex-direction: column; gap: 0;
       background: var(--bg); border-bottom: 1px solid var(--border);
@@ -179,6 +189,16 @@
     .nav-links a { padding: 14px 20px; border-top: 1px solid var(--border); }
     section { padding: 70px 0; }
     .skills-grid, .projects-grid { grid-template-columns: 1fr; }
+
+    /* Mobile hero: photo on the left, name + role beside it, rest full width */
+    .hero { min-height: auto; padding: 96px 0 56px; }
+    .hero-inner { grid-template-columns: auto 1fr; column-gap: 16px; row-gap: 0; align-items: start; }
+    .hero-inner > div:first-child { display: contents; }
+    :where(.hero-inner > div:first-child) > * { grid-column: 1 / -1; }
+    .avatar { grid-column: 1; grid-row: 1 / span 2; width: 104px; height: 104px; padding: 3px; align-self: center; }
+    .hero h1 { grid-column: 2; grid-row: 1; align-self: end; font-size: clamp(1.7rem, 8vw, 2.2rem); }
+    .hero .role { grid-column: 2; grid-row: 2; align-self: start; margin-top: 6px; font-size: 1rem; line-height: 1.4; }
+    .stack { margin-top: 22px; }
   }
   @media (max-width: 400px) {
     .container { padding: 0 16px; }
@@ -192,15 +212,21 @@
 <header id="header">
   <nav class="container" aria-label="Primary">
     <a href="#home" class="logo"><span class="grad-text">ST</span><span class="mono" style="color:var(--muted);font-weight:400">.dev</span></a>
-    <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-    </button>
-    <div class="nav-links" id="navLinks">
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#experience">Experience</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
+    <div class="nav-right">
+      <div class="nav-links" id="navLinks">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <a href="Sachin-Tyagi-Resume.pdf" class="resume-btn" download>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+        Resume
+      </a>
+      <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
     </div>
   </nav>
 </header>
@@ -211,7 +237,7 @@
     <div class="container hero-inner">
       <div>
         <h1><span class="grad-text">Sachin Tyagi</span></h1>
-        <p class="role">Backend Engineer <span class="sep">·</span> AI Developer</p>
+        <p class="role"><span class="nw">Team Lead</span> <span class="sep">·</span> <span class="nw">Backend Engineer</span> <span class="sep">·</span> <span class="nw">AI Developer</span></p>
         <ul class="stack mono" aria-label="Tech stack">
           <li>PHP (Laravel)</li><li>Python</li><li>JavaScript</li><li>Node.js</li><li>React</li><li>AWS</li><li>Docker</li>
         </ul>
